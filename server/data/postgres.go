@@ -26,7 +26,7 @@ func (p *Postgres) Close() {
 
 func (p *Postgres) Query() []Record {
 	records := make([]Record, 0, 0)
-	rows, err := p.db.Query("SELECT * from hackathon")
+	rows, err := p.db.Query("SELECT * from testtable")
 	if err != nil {
 		log.Fatal(err)
 	}
