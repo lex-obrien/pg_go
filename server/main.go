@@ -38,7 +38,3 @@ func req(db data.Database) func(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
-
-func other(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("HI"))
-}
