@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	static := os.Getenv("STATIC")
 	state := os.Getenv("DEBUG")
 	port := os.Getenv("WEBPORT")
 	var db data.Database
@@ -21,7 +22,7 @@ func main() {
 	db.Init()
 	defer db.Close()
 	http.HandleFunc("/data", req(db))
-	http.HandleFunc("/", other)
+	http.Handle("/", http.FileServer(http.Dir(static)))
 	log.Printf("Listing on port %s", port)
 	http.ListenAndServe(":"+port, nil)
 }

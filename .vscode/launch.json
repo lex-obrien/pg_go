@@ -10,7 +10,9 @@
         "host": "127.0.0.1",
         "program": "${workspaceRoot}/server",
         "env": {
-            "DEBUG": "DEBUG"
+            "DEBUG": "DEBUG",
+            "STATIC": "${workspaceRoot}/client",
+            "WEBPORT": "8000"
         },
         "args": []
     }]

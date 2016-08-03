@@ -1,13 +1,14 @@
 version: '2'
 services:
   app:
-    build: ./server
+    build: .
     depends_on:
       - postgres
     ports:
       - "8000:8000"
     environment:
       WEBPORT: 8000
+      STATIC: /public
    
   postgres:
     build: ./db
