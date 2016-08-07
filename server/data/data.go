@@ -2,6 +2,7 @@ package data
 
 import "time"
 
+//Database
 type Database interface {
 	Init()
 	Query() []Record

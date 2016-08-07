@@ -6,5 +6,7 @@
         "**/.DS_Store": true,
         "server/server": true,
         "server/debug": true
-    }
+    },
+
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-bash.exe"
 }
