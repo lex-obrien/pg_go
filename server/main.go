@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"../server/data"
+	"pg_go/server/data"
 )
 
 func main() {
