@@ -6,7 +6,7 @@ type Mock struct {
 	a string
 }
 
-func (m *Mock) Init() {}
+func (m *Mock) Init(debug bool) {}
 
 func (m *Mock) Close() {}
 

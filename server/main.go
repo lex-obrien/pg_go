@@ -14,12 +14,8 @@ func main() {
 	state := os.Getenv("DEBUG")
 	port := os.Getenv("WEBPORT")
 	var db data.Database
-	if state != "" {
-		db = new(data.Mock)
-	} else {
-		db = new(data.Postgres)
-	}
-	db.Init()
+	db = new(data.Postgres)
+	db.Init(state == "DEBUG")
 	defer db.Close()
 	http.HandleFunc("/data", req(db))
 	http.Handle("/", http.FileServer(http.Dir(static)))

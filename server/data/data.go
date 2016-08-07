@@ -4,7 +4,7 @@ import "time"
 
 //Database
 type Database interface {
-	Init()
+	Init(debug bool)
 	Query() []Record
 	Close()
 }

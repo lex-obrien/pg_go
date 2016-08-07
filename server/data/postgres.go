@@ -12,9 +12,13 @@ type Postgres struct {
 	db *sql.DB
 }
 
-func (p *Postgres) Init() {
+func (p *Postgres) Init(debug bool) {
 	var err error
-	p.db, err = sql.Open("postgres", "host=postgres user=postgres dbname=postgres password=postgres sslmode=disable")
+	if debug {
+		p.db, err = sql.Open("postgres", "host=192.168.99.100 user=postgres dbname=postgres password=postgres sslmode=disable")
+	} else {
+		p.db, err = sql.Open("postgres", "host=postgres user=postgres dbname=postgres password=postgres sslmode=disable")
+	}
 	if err != nil {
 		log.Fatal(err)
 	}
