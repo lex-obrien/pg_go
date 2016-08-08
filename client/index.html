@@ -7,6 +7,7 @@
     <div id="container" style="width:800px;height:600px;border:1px solid grey"></div>
 
     <script src="/vs/loader.js"></script>
+    <script src="monacoCustom.js"></script>
     <script>
         require(['vs/editor/editor.main'], function() {
             var editor = monaco.editor.create(document.getElementById('container'), {
@@ -17,8 +18,12 @@
                 ].join('\n'),
                 language: 'javascript'
             });
+        });        
+        require(['vs/editor/editor.main'], function() {
+            customizeEditor();
         });
     </script>
+    <!--<script src="monacoCustom.js"></script>-->
 </body>
 
 </html>
